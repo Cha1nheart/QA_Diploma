@@ -6,7 +6,7 @@ build/classes
 build/downloads
 build/generated
 build/lombok
-build/testresults
+build/test-results
 build/tmp
 data
 
