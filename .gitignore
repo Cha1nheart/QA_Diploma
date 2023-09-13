@@ -2,7 +2,12 @@ Thumbs.db*
 .DS_Store
 HELP.md
 .gradle
-build/
+build/classes
+build/downloads
+build/generated
+build/lombok
+build/testresults
+build/tmp
 data
 
 ### STS ###
