@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.*;
+import static io.restassured.RestAssured.given;
 import static ru.netology.TourPurchase.data.DataGenerator.*;
 
 class TourPurchaseTest {
@@ -37,7 +38,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -64,7 +65,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -93,7 +94,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -120,7 +121,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -151,7 +152,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -178,7 +179,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -205,7 +206,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(generateInvalidMonthOrYearFormat());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -232,7 +233,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateInvalidCvcFormat());
@@ -259,7 +260,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -286,7 +287,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(currentYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -313,7 +314,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(generateInvalidYearPassed());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -340,7 +341,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(generateInvalidYearExpired());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -367,7 +368,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateInvalidOwner());
+                .find("[class=\'input__control\']").setValue(generateInvalidHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -396,7 +397,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -423,7 +424,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -450,7 +451,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(generateInvalidMonthOrYearFormat());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -477,7 +478,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateInvalidCvcFormat());
@@ -504,7 +505,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -531,7 +532,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(currentYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -558,7 +559,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(generateInvalidYearPassed());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -585,7 +586,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(generateInvalidYearExpired());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateNameAndSurname());
+                .find("[class=\'input__control\']").setValue(generateHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());
@@ -612,7 +613,7 @@ class TourPurchaseTest {
                 .find("[class=\'input__control\']").setValue(validYear);
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("Владелец"))
-                .find("[class=\'input__control\']").setValue(generateInvalidOwner());
+                .find("[class=\'input__control\']").setValue(generateInvalidHolder());
         $$("[class=\'input-group__input-case\']")
                 .findBy(Condition.exactText("CVC/CVV"))
                 .find("[class=\'input__control\']").setValue(generateCVC());

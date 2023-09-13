@@ -12,6 +12,7 @@ public class DataGenerator {
     public static String firstCardNumber = "4444444444444441";
     public static String secondCardNumber = "4444444444444442";
     public static String currentYear = LocalDate.now().format(DateTimeFormatter.ofPattern("yy"));
+    public static String currentMonth = LocalDate.now().format(DateTimeFormatter.ofPattern("MM"));
     public static int currentMonthInt = Integer.parseInt(LocalDate.now().format(DateTimeFormatter.ofPattern("MM")));
     public static int currentYearInt = Integer.parseInt(LocalDate.now().format(DateTimeFormatter.ofPattern("yy")));
 
@@ -120,12 +121,12 @@ public class DataGenerator {
         return invalidMonth; /* Невалидное значение. */
     }
 
-    public static String generateNameAndSurname() { /* Возвращает случайное имя и фамилию, бывают недочеты: женское имя и мужская фамилия. */
+    public static String generateHolder() { /* Возвращает случайное имя и фамилию, бывают недочеты: женское имя и мужская фамилия. */
         String nameAndSurname = faker.name().firstName() + " " + faker.name().lastName();
         return nameAndSurname;
     }
 
-    public static String generateInvalidOwner() { /* Возвращает случайный набор букв, цифр. Потом идут не случайные иероглифы и символы. */
+    public static String generateInvalidHolder() { /* Возвращает случайный набор букв, цифр. Потом идут не случайные иероглифы и символы. */
         String invalidOwner = faker.bothify("#?#?#?#?#?#?#? ドミトリー ~!@#$%^&*()=+_[]{};:'\"<>?\\|/ლ(╹◡╹ლ)");
         return invalidOwner; /* Невалидное значение. */
     }
